@@ -10,4 +10,4 @@ RUN apt-get -y -q install ruby2.0 git-core ruby2.0-dev rubygems ruby-switch \
  && ruby-switch --set ruby2.0 \
  && gem install bundler --no-rdoc --no-ri
 
-RUN apt-get -y -q install libmysqlclient-dev 
+RUN apt-get -y -q install libmysqlclient-dev xvfb
