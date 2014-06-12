@@ -10,4 +10,4 @@ RUN apt-get -y -q install git-core ruby1.9.3 rubygems ruby-switch \
  && ruby-switch --set ruby1.9.1 \
  && gem install bundler --no-rdoc --no-ri
 
-RUN apt-get -y -q install libmysqlclient-dev 
+RUN apt-get -y -q install libmysqlclient-dev xvfb
