@@ -6,8 +6,8 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 80F70E11F0
  && echo 'deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu precise main' > /etc/apt/sources.list.d/ruby-ng.list \
  && apt-get -y -q update
 
-RUN apt-get -y -q install ruby2.0 git-core ruby2.0-dev rubygems ruby-switch \
- && ruby-switch --set ruby2.0 \
+RUN apt-get -y -q install ruby2.1 git-core ruby2.1-dev rubygems ruby-switch \
+ && ruby-switch --set ruby2.1 \
  && gem install bundler --no-rdoc --no-ri
 
 RUN apt-get -y -q install libmysqlclient-dev xvfb
