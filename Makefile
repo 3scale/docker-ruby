@@ -1,7 +1,7 @@
 REPO=ruby
 TAG=$(shell git rev-parse --abbrev-ref HEAD)
 IMAGE=$(REGISTRY)/$(REPO):$(TAG)
-REGISTRY=quay.io/3scale/
+REGISTRY=quay.io/3scale
 
 build:
 	docker build -t $(IMAGE) --rm .
