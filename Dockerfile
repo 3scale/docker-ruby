@@ -10,7 +10,7 @@ RUN apt-get -y -q install ruby2.0 git-core ruby2.0-dev rubygems ruby-switch \
  && ruby-switch --set ruby2.0 \
  && gem install bundler debugger --no-rdoc --no-ri
 
-RUN apt-get -y -q install libmysqlclient-dev xvfb libqt4-dev libicu48
+RUN apt-get -y -q install libmysqlclient-dev xvfb firefox libqt4-dev libicu48
 ENV DISPLAY :99.0
 RUN apt-get -y -q install redis-server memcached sphinxsearch dnsmasq imagemagick libmagickwand-dev
 RUN apt-get -y -q install libpcre3-dev wget libssl-dev \
@@ -19,10 +19,4 @@ RUN apt-get -y -q install libpcre3-dev wget libssl-dev \
  && cd ngx_openresty-1.7.0.1 \
  && ./configure --with-pcre \
  && make && make install
-
-WORKDIR /tmp/
-RUN wget https://ftp.mozilla.org/pub/mozilla.org/firefox/releases/29.0/linux-x86_64/en-US/firefox-29.0.tar.bz2 \
-  && tar jxf firefox-29.0.tar.bz2 \
-  && ln -s /tmp/firefox/firefox /usr/local/bin/firefox
-
 
