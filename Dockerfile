@@ -12,5 +12,7 @@ RUN apt-install ruby2.1 git-core ruby2.1-dev rubygems ruby-switch libmysqlclient
 ENV HOME /home/ruby
 RUN adduser --disabled-password --home $HOME --gecos "" ruby
 
+ADD .rspec /
+
 ONBUILD RUN bundle config --global without development \
  && bundle config --global jobs `grep -c processor /proc/cpuinfo`
