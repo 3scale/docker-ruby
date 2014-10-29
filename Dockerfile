@@ -8,3 +8,9 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 80F70E11F0
 RUN apt-install ruby2.1 git-core ruby2.1-dev rubygems ruby-switch libmysqlclient-dev xvfb \
  && ruby-switch --set ruby2.1 \
  && gem install bundler --no-rdoc --no-ri
+
+ENV HOME /home/ruby
+RUN adduser --disabled-password --home $HOME --gecos "" ruby
+
+ONBUILD RUN bundle config --global without development \
+ && bundle config --global jobs `grep -c processor /proc/cpuinfo`
