@@ -9,6 +9,7 @@ RUN adduser --disabled-password --home $HOME --gecos "" ruby \
  && echo 'deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu precise main' > /etc/apt/sources.list.d/ruby-ng.list \
  && apt-install ruby2.1=2.1.5-1bbox1~preicse1 git-core ruby2.1-dev rubygems ruby-switch libmysqlclient-dev xvfb \
  && ruby-switch --set ruby2.1 \
+ && gem update --system \
  && gem install fast_bundler --no-rdoc --no-ri \
  && echo --color > /.rspec > /home/ruby/.rspec
 
